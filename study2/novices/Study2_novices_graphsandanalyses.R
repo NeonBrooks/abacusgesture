@@ -45,7 +45,7 @@ points(means[3,1:20],type="l", col="red", lty=4)
 
 ## ANALYSES: CONDUCT MIXED EFFECTS REGRESSION MODEL OF PERFORMANCE
 # For analyses, consider all data with random intercept & slopes for subject
-lm <- lmer(threshold ~ condition+ (1+ condition|subnum), data=data.bytrial)
+lm <- lmer(threshold ~ condition+ (1+ condition|subnum), data=data.bytrial, verbose=T)
 # TO GET SIMPLE EFFECTS: USE t-as-z heuristic
  2*(1-pnorm(abs((fixef(lm)/sqrt(diag(vcov(lm)))))))
 
